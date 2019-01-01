@@ -1,0 +1,42 @@
+@namespace("org.spf4j.demo.avro")
+protocol Demo {
+
+    /** A demo record */
+    @beta
+    record DemoRecord {
+      /** id */
+      string id = "";
+      /** record name */
+      string name = "";
+      /** record description */
+      string description = "";
+    }
+
+
+    @beta
+    /** meta data */
+    record MetaData {
+      /** last accessed */
+      @logicalType("instant") string lastAccessed;
+      /** user that last accessed record*/
+      string lastAccessedBy;
+      /** last modified */
+      @logicalType("instant") string lastModified;
+      /** user that last modified record*/
+      string lastModifiedBy;
+      /** information time */
+      @logicalType("instant") string asOf;
+    }
+
+    /** A record with metadata */
+    @beta
+    record DemoRecordInfo {
+      /** demo record */
+      DemoRecord demoRecord;
+      /** record metaData */
+      MetaData metaData;
+    }
+
+
+
+}
