@@ -18,16 +18,16 @@ import org.spf4j.demo.avro.DemoRecordInfo;
 public interface ExampleResource {
 
   @GET
-  @Produces(value = {"application/octet-stream", "application/json"})
+  @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream", "application/json"})
   List<DemoRecordInfo> getRecords();
 
   @GET
   @Path("projection")
-  @Produces(value = {"application/octet-stream", "application/json"})
+  @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream", "application/json"})
   <T> List<GenericRecord> getRecordsProjection(@QueryParam("projection") Schema elementSchema);
 
   @POST
-  @Consumes(value = {"application/octet-stream", "application/json"})
+  @Consumes(value = {"application/avro", "application/avro-x+json", "application/octet-stream", "application/json"})
   void saveRecords(List<DemoRecordInfo> records);
 
 }
