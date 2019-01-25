@@ -1,0 +1,20 @@
+@namespace("org.spf4j.fred")
+protocol Demo {
+
+    /** A series category*/
+    record Category {
+      /** category id, 0 for root category */
+      int id;
+      /** category name */
+      string name = "";
+      /** category parent identifier */
+      int parent_id = 0;
+    }
+
+    /** a set of categories */
+    record Categories {
+      /** the categories */
+      array<Category> categories = [];
+    }
+
+}
