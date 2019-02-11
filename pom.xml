@@ -28,11 +28,11 @@
   <parent>
     <groupId>org.spf4j.avro</groupId>
     <artifactId>schema-parent-pom</artifactId>
-    <version>0.4</version>
+    <version>0.16</version>
   </parent>
 
   <properties>
-    <scm.url>https://github.com/zolyfarkas/core-schema</scm.url>
+    <scm.url>https://github.com/zolyfarkas/jaxrs-spf4j-demo-schema</scm.url>
     <avro.allowUndefinedLogicalTypes>false</avro.allowUndefinedLogicalTypes>
     <avro.validator.validFieldNames>id</avro.validator.validFieldNames>
   </properties>
