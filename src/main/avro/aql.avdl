@@ -11,9 +11,9 @@ protocol Demo {
       /** character name */
       string name = "";
       /** home world, foreign key to Planet.name */
-      string homeWorld;
-      /** Character specied*/
-      Species species;
+      string homeWorldPlanet;
+      /** Character species, name */
+      string speciesName;
     }
 
     /** Example Character */
@@ -39,12 +39,12 @@ protocol Demo {
 
     /** A life form species */
     record Species {
-      /** Species name */
+      /** Species name, uniquely identifies a species */
       string name;
       /** species average life span */
       int averageLifeSpanYears;
       /** species origin planet */
-      Planet origin;
+      string originPlanet;
     }
 
 
