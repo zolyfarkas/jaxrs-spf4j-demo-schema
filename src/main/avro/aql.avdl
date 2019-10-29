@@ -1,0 +1,52 @@
+/** Sample object for demostrating AQL */
+@namespace("org.spf4j.demo.aql")
+protocol Demo {
+
+
+    /** Example Character */
+    @beta
+    record Character {
+      /** character identifier */
+      string characterId;
+      /** character name */
+      string name = "";
+      /** home world, foreign key to Planet.name */
+      string homeWorld;
+      /** Character specied*/
+      Species species;
+    }
+
+    /** Example Character */
+    @beta
+    record Friendship {
+      /** character name */
+      string characterId1;
+      /** Character friends */
+      string characterId2;
+    }
+
+    /** Planet */
+    @beta
+    record Planet {
+      /** planet name, uniquely identifies a planet */
+      string name;
+      /** Planet class, [see](https://en.wikipedia.org/wiki/Star_Trek_planet_classification) */
+      string planetClass;
+      /** Planet age */
+      long age;
+    }
+    
+
+    /** A life form species */
+    record Species {
+      /** Species name */
+      string name;
+      /** species average life span */
+      int averageLifeSpanYears;
+      /** species origin planet */
+      Planet origin;
+    }
+
+
+
+}
