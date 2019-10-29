@@ -22,7 +22,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
-import org.spf4j.jaxrs.StreamingArrayContent;
+import org.spf4j.jaxrs.IterableArrayContent;
 
 /**
  * REST avro sql endpoint.
@@ -31,8 +31,7 @@ import org.spf4j.jaxrs.StreamingArrayContent;
 public interface AvroQueryResource {
 
   @GET
-  @Path("query")
-  StreamingArrayContent<GenericRecord> query(@QueryParam("query") String query);
+  IterableArrayContent<GenericRecord> query(@QueryParam("query") String query);
 
   @GET
   @Path("schema")
