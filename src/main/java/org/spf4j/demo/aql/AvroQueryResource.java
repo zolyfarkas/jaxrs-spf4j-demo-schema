@@ -19,6 +19,7 @@ import java.util.Map;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericRecord;
@@ -31,14 +32,17 @@ import org.spf4j.jaxrs.IterableArrayContent;
 public interface AvroQueryResource {
 
   @GET
+  @Produces({"application/json", "application/avro+json", "application/avro"})
   IterableArrayContent<GenericRecord> query(@QueryParam("query") String query);
 
   @GET
-  @Path("schema")
-  Map<String, Schema> schema();
+  @Path("schemas")
+  @Produces({"application/json"})
+  Map<String, Schema> schemas();
 
   @GET
-  @Path("schema/{entityName}")
-  Schema entitySchema(@PathParam("entityName") String enttityName);
+  @Path("schemas/{entityName}")
+  @Produces({"application/json"})
+  Schema entitySchema(@PathParam("entityName") String entityName);
 
 }
