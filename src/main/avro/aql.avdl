@@ -16,12 +16,12 @@ protocol Demo {
       string speciesName;
     }
 
-    /** Example Character */
+    /** Example Friendship relationship */
     @beta
     record Friendship {
-      /** character name */
+      /** the id of the character that thinks is a friend with somebody else */
       string characterId1;
-      /** Character friends */
+      /** the id of the friendship counter-party */
       string characterId2;
     }
 
