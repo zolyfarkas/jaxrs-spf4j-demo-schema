@@ -15,7 +15,6 @@
  */
 package org.spf4j.demo;
 
-import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -29,5 +28,5 @@ public interface ExampleResourceExt extends ExampleResource {
   @GET
   @Produces(value = {"application/octet-stream", "application/json"})
   @Path("projection")
-  <T> List<T> getRecordsProjection(@QueryParam("projection") Class<T> clasz);
+  <T> Iterable<T> getRecordsProjection(@QueryParam("projection") Class<T> clasz);
 }

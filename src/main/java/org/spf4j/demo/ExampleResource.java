@@ -26,7 +26,7 @@ public interface ExampleResource {
   @Path("projection")
   @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
     "application/json", "text/csv"})
-  <T> List<GenericRecord> getRecordsProjection(@QueryParam("projection") Schema elementSchema);
+  Iterable<GenericRecord> getRecordsProjection(@QueryParam("projection") Schema elementSchema);
 
   @POST
   @Consumes(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
