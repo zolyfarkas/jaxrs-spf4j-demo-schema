@@ -32,8 +32,10 @@ protocol Demo {
       string name;
       /** Planet class, [see](https://en.wikipedia.org/wiki/Star_Trek_planet_classification) */
       string planetClass;
-      /** Planet age */
+      /** Planet age, earth years(as of 2000) since core formation, or of the material from which the planet formed  */
       long age;
+      /** description */
+      string @deprecated description;
     }
     
 
