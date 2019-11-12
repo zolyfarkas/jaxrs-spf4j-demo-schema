@@ -41,8 +41,8 @@ protocol Demo {
     record Species {
       /** Species name, uniquely identifies a species */
       string name;
-      /** species average life span */
-      int averageLifeSpanYears;
+      /** species average life span in earth years */
+      double averageLifeSpanYears;
       /** species origin planet */
       string originPlanet;
     }
