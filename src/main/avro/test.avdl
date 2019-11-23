@@ -1,0 +1,78 @@
+@namespace("org.spf4j.test")
+protocol Demo {
+    
+    /** a MD5 hash */
+    fixed MD5(16);
+
+    /** Test Record*/
+    record TestRecord {
+      /** test field */
+      int intField;
+      /** test field */
+      long longField;
+      /** test field */
+      double doubleField;
+      /** test field */
+      bytes bytesField;
+      /** test field */
+      float floatField = 0.5;
+
+      /** test field */
+      @logicalType("decimal") @precision(17) @scale(4) bytes decimalField;
+
+      /** test field , null for testing */
+      union {null, string, OtherRecord, OtherRecord2} favorite;
+
+      /** test field */
+      array<OtherRecord> children;
+    }
+
+
+    /** Test Record*/
+    record TestRecord2 {
+      /** test field */
+      int intField;
+      /** test field */
+      long longField;
+      /** test field */
+      double doubleField;
+      /** test field  bla */
+      bytes bytesField;
+
+      /** test field */
+      @logicalType("decimal") @precision(17)  bytes decimalField;
+
+      /** test field, null for testing */
+      union {null, string, OtherRecord2} favorite;
+
+      /** test field */
+      array<OtherRecord2> children;
+    }
+
+
+
+    /** other test record */
+    record OtherRecord {
+      /** test field, null for testing*/
+      union {null, TestRecord} parent;
+
+      /** test field */
+      string value = "";
+
+      /** test field, null for testing */
+      union {null, float} floatValue = null;
+    }
+
+    /** other test record */
+    record OtherRecord2 {
+      /** test field, null for testing */
+      union {null, TestRecord2} parent;
+
+      /** test field */
+      MD5 hash;
+
+    }
+
+
+
+}
