@@ -10,6 +10,8 @@ protocol Demo {
       string name = "";
       /** record description */
       string description = "";
+      /** some new field introduced in version 0.5 */
+      string someField = "";
     }
 
 
