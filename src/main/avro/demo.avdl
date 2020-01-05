@@ -28,6 +28,8 @@ protocol Demo {
       string lastModifiedBy;
       /** information time */
       @logicalType("instant") string asOf;
+      /** access count if available, null when not */
+      union {null, long} accessCount = null;
     }
 
     /** A record with metadata */
