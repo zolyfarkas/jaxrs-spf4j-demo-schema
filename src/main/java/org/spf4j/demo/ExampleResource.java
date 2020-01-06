@@ -20,24 +20,24 @@ public interface ExampleResource {
 
   @GET
   @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
-    "application/json", "text/csv"})
+    "application/json", "application/avro+json", "text/csv"})
   List<DemoRecordInfo> getRecords();
 
   @GET
   @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
-    "application/json"})
+    "application/json", "application/avro+json"})
   @Path("{id}")
   DemoRecordInfo getRecord(@PathParam("id") String id);
 
   @GET
   @Path("projection")
   @Produces(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
-    "application/json", "text/csv"})
+    "application/json", "application/avro+json", "text/csv"})
   Iterable<GenericRecord> getRecordsProjection(@QueryParam("projection") Schema elementSchema);
 
   @POST
   @Consumes(value = {"application/avro", "application/avro-x+json", "application/octet-stream",
-    "application/json", "text/csv"})
+    "application/json", "application/avro+json", "text/csv"})
   void saveRecords(List<DemoRecordInfo> records);
 
 }
