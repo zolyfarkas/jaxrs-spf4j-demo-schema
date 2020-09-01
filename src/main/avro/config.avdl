@@ -1,0 +1,20 @@
+/** Sample object for demostrating AQL */
+@namespace("org.spf4j.demo.config")
+protocol Config {
+
+
+    /** Example config record. */
+    @beta
+    record DemoConfig {
+      /** Demo String Value */
+      string strVal = "";
+      /** Demo int value */
+      int intVal = -1;
+      /** Demo boolean value */
+      boolean boolVal = true;
+      /** Demo list value */
+      array<string> strList = [];
+    }
+
+
+}
