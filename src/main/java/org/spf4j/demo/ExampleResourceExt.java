@@ -19,6 +19,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import org.apache.avro.Schema;
 
 /**
  * @author Zoltan Farkas
@@ -28,5 +29,5 @@ public interface ExampleResourceExt extends ExampleResource {
   @GET
   @Produces(value = {"application/octet-stream", "application/json"})
   @Path("projection")
-  <T> Iterable<T> getRecordsProjection(@QueryParam("projection") Class<T> clasz);
+  <T> Iterable<T> getRecordsProjection(@QueryParam("projection") Schema projSchema, @QueryParam("java_type") Class<T> clasz);
 }
