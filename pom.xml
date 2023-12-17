@@ -35,7 +35,7 @@
     <scm.url>https://github.com/zolyfarkas/jaxrs-spf4j-demo-schema</scm.url>
     <avro.allowUndefinedLogicalTypes>false</avro.allowUndefinedLogicalTypes>
     <avro.validator.validFieldNames>id</avro.validator.validFieldNames>
-    <skip.avrodoc>true</skip.avrodoc>
+    <skip.avrodoc>false</skip.avrodoc>
   </properties>
 
   <scm>
